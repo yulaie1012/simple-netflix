@@ -14,11 +14,7 @@ if (isset($_POST["submitButton"])) {
   $password = FormSanitizer::sanitizeFormName($_POST["password"]);
   $password2 = FormSanitizer::sanitizeFormName($_POST["password2"]);
 
-  echo $firstName . "<br />";
-  echo $lastName . "<br />";
-  echo $username . "<br />";
-  echo $email . "<br />";
-  echo $password . "<br />";
+  $account->validateFirstName($firstName);
 }
 ?>
 <!DOCTYPE html>
@@ -37,6 +33,7 @@ if (isset($_POST["submitButton"])) {
           <span>to continue to Netflix</span>
         </div>
         <form method="POST">
+          <?php echo $account->getError("Temporary string."); ?>
           <input type="text" name="firstName" placeholder="First name" required>
           <input type="text" name="lastName" placeholder="Last name" required>
           <input type="text" name="username" placeholder="Username" required>
