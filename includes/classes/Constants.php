@@ -7,5 +7,7 @@ class Constants {
   public static $emailsDontMatch = "Your emails don't match.";
   public static $emailInvalid = "The email is not valid.";
   public static $emailTaken = "The email is already in use.";
+  public static $passwordsDontMatch = "Your passwords don't match.";
+  public static $passwordCharacters = "Your password must be between 5 and 25 characters.";
 }
 ?>
