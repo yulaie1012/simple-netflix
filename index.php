@@ -1,1 +1,7 @@
-<h1>Netflix index page</h1>
+<?php
+require_once("includes/config.php");
+
+if (isset($_SESSION["userLoggedIn"])) {
+  header("Location: register.php");
+}
+?>
