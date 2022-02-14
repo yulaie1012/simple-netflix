@@ -15,6 +15,7 @@ $userLoggedIn = $_SESSION["userLoggedIn"];
     <title>Netflix</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="assets/style/style.css" />
+    <script src="https://kit.fontawesome.com/ab439d9d6d.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="wrapper">
