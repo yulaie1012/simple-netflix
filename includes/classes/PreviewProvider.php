@@ -11,6 +11,13 @@ class PreviewProvider {
     if ($entity == null) {
       $entity = $this->getRandomEntity();
     }
+
+    $id = $entity->getId();
+    $name = $entity->getName();
+    $thumbnail = $entity->getThumbnail();
+    $trailer = $entity->getTrailer();
+
+    echo "<img src='$thumbnail'>";
   }
 
   private function getRandomEntity() {
@@ -20,7 +27,7 @@ class PreviewProvider {
     $query->execute();
 
     $row = $query->fetch(PDO::FETCH_ASSOC);
-    echo $row["name"];
+    return new Entity($this->con, $row);
   }
 }
 ?>
