@@ -13,4 +13,7 @@ echo $preview->createTrailer($entity);
 
 $seasonProvider = new SeasonProvider($con, $userLoggedIn);
 echo $seasonProvider->create($entity);
+
+$categoryContainer = new CategoryContainer($con, $userLoggedIn);
+echo $categoryContainer->showCategory($entity->getCategoryId(), "You might also like");
 ?>

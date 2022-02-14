@@ -239,3 +239,7 @@ button i {
   max-height: 200px;
   overflow-y: auto;
 }
+
+.preview-categories.no-scroll .category .entities {
+  white-space: normal;
+}
