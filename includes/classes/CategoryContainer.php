@@ -1,5 +1,5 @@
 <?php
-class CategoryContainers {
+class CategoryContainer {
   private $con, $username;
 
   public function __construct($con, $username) {
