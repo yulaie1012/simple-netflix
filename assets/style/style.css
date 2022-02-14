@@ -192,3 +192,12 @@ button i {
 .preview-categories {
   padding: 0 50px;
 }
+
+.error-banner {
+  color: #ffffff;
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+}
