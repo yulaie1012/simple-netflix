@@ -8,7 +8,7 @@ class SeasonProvider {
   }
 
   public function create($entity) {
-    // TODO
+    $seasons = $entity->getSeasons();
   }
 }
 ?>
