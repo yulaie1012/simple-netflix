@@ -243,3 +243,7 @@ button i {
 .preview-categories.no-scroll .category .entities {
   white-space: normal;
 }
+
+.watch-container video {
+  width: 100%;
+}
