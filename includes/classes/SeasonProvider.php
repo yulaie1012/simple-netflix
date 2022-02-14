@@ -26,5 +26,13 @@ class SeasonProvider {
 
     return $seasonsHtml;
   }
+
+  private function createVideoSquare($video) {
+    $id = $video->getId();
+    $thumbnail = $video->getThumbnail();
+    $name = $video->getTitle();
+    $description = $video->getDescription();
+    $episode = $video->getEpisode();
+  }
 }
 ?>
