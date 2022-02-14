@@ -23,7 +23,9 @@ class PreviewProvider {
                 <source src='$trailer' type='video/mp4' />
               </video>
               <div class='preview-overlay'>
-                preview overlay
+                <div class='main-details'>
+                  <h3>$name</h3>
+                </div>
               </div>
             </div>";
   }
