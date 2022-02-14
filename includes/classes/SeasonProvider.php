@@ -19,8 +19,17 @@ class SeasonProvider {
     foreach ($seasons as $season) {
       $seasonNumber = $season->getSeasonNumber();
 
+      $videosHtml = "";
+
+      foreach ($season->getVideos() as $video) {
+        $videosHtml .= $this->createVideoSquare($video);
+      }
+
       $seasonsHtml .= "<div class='season'>
                          <h3>Season $seasonNumber</h3>
+                         <div class='videos'>
+                           $videosHtml
+                         </div>
                        </div>";
     }
 
@@ -33,6 +42,18 @@ class SeasonProvider {
     $name = $video->getTitle();
     $description = $video->getDescription();
     $episode = $video->getEpisode();
+
+    return "<a href='watch.php?id=$id'>
+              <div class='episode-container'>
+                <div class='contents'>
+                  <img src='$thumbnail'>
+                  <div class='video-info'>
+                      <h4>$episode. $name</h4>
+                      <span>$description</span>
+                  </div>
+                </div>
+              </div>
+            </a>";
   }
 }
 ?>
