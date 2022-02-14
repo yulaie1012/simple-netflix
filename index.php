@@ -9,5 +9,5 @@ if (!isset($_SESSION["userLoggedIn"])) {
 $userLoggedIn = $_SESSION["userLoggedIn"];
 
 $previewProvider = new PreviewProvider($con, $userLoggedIn);
-echo $previewProvider->createTrailer();
+echo $previewProvider->createTrailer(null);
 ?>
