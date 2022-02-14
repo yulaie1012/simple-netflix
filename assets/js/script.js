@@ -5,3 +5,8 @@ function toggleVolume(button) {
   $(button).find("i").toggleClass("fa-volume-xmark");
   $(button).find("i").toggleClass("fa-volume-high");
 }
+
+function finishTrailer() {
+  $(".preview-video").toggle();
+  $(".preview-image").toggle();
+}

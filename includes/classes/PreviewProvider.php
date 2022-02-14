@@ -21,7 +21,7 @@ class PreviewProvider {
 
     return "<div class='preview-container'>
               <img src='$thumbnail' class='preview-image' hidden />
-              <video autoplay muted class='preview-video'>
+              <video autoplay muted class='preview-video' onended='finishTrailer();'>
                 <source src='$trailer' type='video/mp4' />
               </video>
               <div class='preview-overlay'>
