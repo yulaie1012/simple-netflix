@@ -22,6 +22,9 @@ class PreviewProvider {
               <video autoplay muted class='preview-video'>
                 <source src='$trailer' type='video/mp4' />
               </video>
+              <div class='preview-overlay'>
+                preview overlay
+              </div>
             </div>";
   }
 
