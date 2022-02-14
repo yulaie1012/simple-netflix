@@ -17,7 +17,12 @@ class PreviewProvider {
     $thumbnail = $entity->getThumbnail();
     $trailer = $entity->getTrailer();
 
-    echo "<img src='$thumbnail'>";
+    return "<div class='preview-container'>
+              <img src='$thumbnail' class='preview-image' hidden />
+              <video autoplay muted class='preview-video'>
+                <source src='$trailer' type='video/mp4' />
+              </video>
+            </div>";
   }
 
   private function getRandomEntity() {
