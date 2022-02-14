@@ -17,6 +17,8 @@ class PreviewProvider {
     $thumbnail = $entity->getThumbnail();
     $trailer = $entity->getTrailer();
 
+    // TODO: ADD SUBTITLE
+
     return "<div class='preview-container'>
               <img src='$thumbnail' class='preview-image' hidden />
               <video autoplay muted class='preview-video'>
@@ -25,6 +27,10 @@ class PreviewProvider {
               <div class='preview-overlay'>
                 <div class='main-details'>
                   <h3>$name</h3>
+                  <div class='buttons'>
+                    <button>Play</button>
+                    <button>Volume</button>
+                  </div>
                 </div>
               </div>
             </div>";
