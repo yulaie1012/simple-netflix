@@ -25,7 +25,7 @@ $upNextVideo = VideoProvider::getUpNext($con, $video);
       <h2>Up next:</h2>
       <h3><?php echo $upNextVideo->getTitle(); ?></h3>
       <h3><?php echo $upNextVideo->getSeasonAndEpisode(); ?></h3>
-      <button class="play-up-next">
+      <button class="play-up-next" onclick="watchVideo(<?php echo $upNextVideo->getId(); ?>);">
         <i class="fa-solid fa-play"></i>
       </button>
     </div>
