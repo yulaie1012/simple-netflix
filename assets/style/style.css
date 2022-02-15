@@ -304,3 +304,44 @@ button i {
   top: 5px;
   left: 5px;
 }
+
+.top-bar {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+  height: 70px;
+  box-sizing: border-box;
+}
+
+.logo-container {
+  height: 40px;
+}
+
+.logo-container img {
+  height: 100%;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #ffffff;
+  font-size: 14px;
+  margin-left: 20px;
+}
+
+.right-items {
+  text-align: right;
+  flex: 1;
+}
+
+.right-items i {
+  color: #ffffff;
+  font-size: 20px;
+  margin-left: 10px;
+}
