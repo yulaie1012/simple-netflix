@@ -23,6 +23,9 @@ class PreviewProvider {
     $seasonEpisode = $video->getSeasonAndEpisode();
     $subtitle = $video->isMovie() ? "" : "<h4>$seasonEpisode</h4>";
 
+    $inProgress = $video->isInProgress($this->username);
+    $playButtonText = $inProgress ? "Continue watching" : "Play";
+
     return "<div class='preview-container'>
               <img src='$thumbnail' class='preview-image' hidden />
               <video autoplay muted class='preview-video' onended='finishTrailer();'>
@@ -34,7 +37,7 @@ class PreviewProvider {
                   $subtitle
                   <div class='buttons'>
                     <button onclick='watchVideo($videoId)'>
-                      <i class='fa-solid fa-play'></i> Play
+                      <i class='fa-solid fa-play'></i> $playButtonText
                     </button>
                     <button onclick='toggleVolume(this);'>
                       <i class='fa-solid fa-volume-xmark'></i>
