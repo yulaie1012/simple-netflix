@@ -263,8 +263,30 @@ button i {
 
 .video-controls button {
   font-size: 50px;
-  padding: 50px;
+  margin: 50px;
+  padding: 0;
   color: #ffffff;
   background-color: transparent;
   border: none;
+  cursor: pointer;
+}
+
+.up-next {
+  height: 100%;
+  justify-content: center;
+}
+
+.up-next-container button {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.up-next-container h2,
+.up-next-container h3 {
+  color: #ffffff;
+}
+
+.watch-nav {
+  z-index: 2;
 }
