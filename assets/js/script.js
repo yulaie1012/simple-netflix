@@ -85,3 +85,9 @@ function setStartTime(videoId, username) {
     });
   });
 }
+
+function restartVideo() {
+  $("video")[0].currentTime = 0;
+  $("video")[0].play();
+  $(".up-next").fadeOut();
+}
