@@ -50,6 +50,21 @@ class Video {
     return $this->sqlData["episode"];
   }
 
+  public function getSeasonAndEpisode() {
+    if ($this->isMovie()) {
+      return;
+    }
+
+    $season = $this->getSeason();
+    $episode = $this->getEpisode();
+
+    return "Season $season, Episode $episode";
+  }
+
+  public function isMovie() {
+    return $this->sqlData["isMovie"] == 1;
+  }
+
   public function increaseViews() {
     $query = $this->con->prepare("UPDATE videos SET views = views + 1 WHERE id = :id");
     $query->bindValue(":id", $this->getId());
