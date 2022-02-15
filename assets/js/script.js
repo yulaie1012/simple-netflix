@@ -10,3 +10,20 @@ function finishTrailer() {
   $(".preview-video").toggle();
   $(".preview-image").toggle();
 }
+
+function hideTimer() {
+  let timeout = null;
+
+  $(document).on("mousemove", function () {
+    clearTimeout(timeout);
+    $(".watch-nav").fadeIn();
+
+    timeout = setTimeout(function () {
+      $(".watch-nav").fadeOut();
+    }, 3000);
+  });
+}
+
+function initializeVideo() {
+  hideTimer();
+}
