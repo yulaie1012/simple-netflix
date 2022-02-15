@@ -17,7 +17,7 @@ $upNextVideo = VideoProvider::getUpNext($con, $video);
     </button>
     <h1><?php echo $video->getTitle(); ?></h1>
   </div>
-  <div class="video-control up-next">
+  <div class="video-control up-next" style="display: none;">
     <button onclick="restartVideo();">
       <i class="fa-solid fa-arrow-rotate-right"></i>
     </button>
@@ -30,7 +30,7 @@ $upNextVideo = VideoProvider::getUpNext($con, $video);
       </button>
     </div>
   </div>
-  <video controls autoplay>
+  <video controls autoplay onended="showUpNext();">
     <source src="<?php echo $video->getFilePath(); ?>" type="video/mp4" />
   </video>
 </div>
