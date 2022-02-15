@@ -17,6 +17,8 @@ class PreviewProvider {
     $thumbnail = $entity->getThumbnail();
     $trailer = $entity->getTrailer();
 
+    $videoId = VideoProvider::getEntityVideoForUser($this->con, $id, $this->username);
+
     // TODO: ADD SUBTITLE
 
     return "<div class='preview-container'>
@@ -28,7 +30,7 @@ class PreviewProvider {
                 <div class='main-details'>
                   <h3>$name</h3>
                   <div class='buttons'>
-                    <button>
+                    <button onclick='watchVideo($videoId)'>
                       <i class='fa-solid fa-play'></i> Play
                     </button>
                     <button onclick='toggleVolume(this);'>
