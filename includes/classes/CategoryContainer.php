@@ -34,7 +34,7 @@ class CategoryContainer {
     return $html . "</div>";
   }
 
-  public function showTVShowCategories() {
+  public function showTVShowsCategories() {
     $query = $this->con->prepare("SELECT * FROM categories");
     $query->execute();
 
@@ -55,7 +55,7 @@ class CategoryContainer {
     if ($tvShows && $movies) {
       $entities = EntityProvider::getEntities($this->con, $categoryId, 30);
     } else if ($tvShows) {
-      $entities = EntityProvider::getTVShowEntities($this->con, $categoryId, 30);
+      $entities = EntityProvider::getTVShowsEntities($this->con, $categoryId, 30);
     } else {
       // Get movie entities
     }

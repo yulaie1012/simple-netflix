@@ -26,7 +26,7 @@ class EntityProvider {
     return $result;
   }
 
-  public static function getTVShowEntities($con, $categoryId, $limit) {
+  public static function getTVShowsEntities($con, $categoryId, $limit) {
     $sql = "SELECT DISTINCT(entities.id) FROM entities
             INNER JOIN videos
             ON entities.id = videos.entityId

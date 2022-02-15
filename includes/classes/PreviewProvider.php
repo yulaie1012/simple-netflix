@@ -7,8 +7,8 @@ class PreviewProvider {
     $this->username = $username;
   }
 
-  public function createTVShowPreviewVideo() {
-    $entityArray = EntityProvider::getTVShowEntities($this->con, null, 1);
+  public function createTVShowsPreviewVideo() {
+    $entityArray = EntityProvider::getTVShowsEntities($this->con, null, 1);
 
     if (sizeof($entityArray) == 0) {
       ErrorMessage::show("No TV shows to display.");
