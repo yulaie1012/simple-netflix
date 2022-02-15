@@ -32,6 +32,20 @@ function initializeVideo(videoId, username) {
 
 function updateProgressTimer(videoId, username) {
   addProgress(videoId, username);
+
+  let timer;
+
+  $("video")
+    .on("playing", function (event) {
+      window.clearInterval(timer);
+      timer = window.setInterval(function () {
+        // TODO: update progress
+      }, 3000);
+    })
+    .on("ended", function () {
+      // TODO: set finished
+      window.clearInterval(timer);
+    });
 }
 
 function addProgress(videoId, username) {
