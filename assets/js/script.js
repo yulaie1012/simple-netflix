@@ -24,6 +24,8 @@ function hideTimer() {
   });
 }
 
-function initializeVideo() {
+function initializeVideo(videoId, username) {
   hideTimer();
+  // TODO: set start time
+  // TODO: update progress timer
 }

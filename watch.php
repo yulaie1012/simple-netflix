@@ -21,5 +21,5 @@ $video->increaseViews();
 </div>
 
 <script>
-  initializeVideo();
+  initializeVideo("<?php echo $video->getId(); ?>", "<?php echo $userLoggedIn; ?>");
 </script>
