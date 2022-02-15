@@ -42,6 +42,7 @@ class SeasonProvider {
     $name = $video->getTitle();
     $description = $video->getDescription();
     $episode = $video->getEpisode();
+    $hasSeen = $video->hasSeen($this->username) ? "<i class='fa-solid fa-circle-check'></i>" : "";
 
     return "<a href='watch.php?id=$id'>
               <div class='episode-container'>
@@ -51,6 +52,7 @@ class SeasonProvider {
                       <h4>$episode. $name</h4>
                       <span>$description</span>
                   </div>
+                  $hasSeen
                 </div>
               </div>
             </a>";
