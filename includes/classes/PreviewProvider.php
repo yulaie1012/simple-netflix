@@ -18,8 +18,10 @@ class PreviewProvider {
     $trailer = $entity->getTrailer();
 
     $videoId = VideoProvider::getEntityVideoForUser($this->con, $id, $this->username);
+    $video = new Video($this->con, $videoId);
 
-    // TODO: ADD SUBTITLE
+    $seasonEpisode = $video->getSeasonAndEpisode();
+    $subtitle = $video->isMovie() ? "" : "<h4>$seasonEpisode</h4>";
 
     return "<div class='preview-container'>
               <img src='$thumbnail' class='preview-image' hidden />
@@ -29,6 +31,7 @@ class PreviewProvider {
               <div class='preview-overlay'>
                 <div class='main-details'>
                   <h3>$name</h3>
+                  $subtitle
                   <div class='buttons'>
                     <button onclick='watchVideo($videoId)'>
                       <i class='fa-solid fa-play'></i> Play
