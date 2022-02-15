@@ -27,5 +27,15 @@ function hideTimer() {
 function initializeVideo(videoId, username) {
   hideTimer();
   // TODO: set start time
-  // TODO: update progress timer
+  updateProgressTimer(videoId, username);
+}
+
+function updateProgressTimer(videoId, username) {
+  addProgress();
+}
+
+function addProgress() {
+  $.post("ajax/addProgress.php", function (data) {
+    alert(data);
+  })
 }
