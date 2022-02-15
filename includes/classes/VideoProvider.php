@@ -14,7 +14,7 @@ class VideoProvider {
     $query->bindValue(":episode", $currentVideo->getEpisode());
     $query->execute();
 
-    if ($query->rowCount == 0) {
+    if ($query->rowCount() == 0) {
       $query = $con->prepare("SELECT * FROM videos
                               WHERE season <= 1 AND episode <= 1 AND id != :videoId
                               ORDER BY views DESC
