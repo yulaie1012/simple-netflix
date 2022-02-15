@@ -26,7 +26,7 @@ function hideTimer() {
 
 function initializeVideo(videoId, username) {
   hideTimer();
-  // TODO: set start time
+  setStartTime(videoId, username);
   updateProgressTimer(videoId, username);
 }
 
@@ -70,4 +70,18 @@ function setFinished(videoId, username) {
       alert(data);
     }
   });
+}
+
+function setStartTime(videoId, username) {
+  $.post("ajax/getProgress.php", { videoId, username }, function (data) {
+    if (isNaN(data)) {
+      alert(data);
+      return;
+    }
+
+    $("video").on("canplay", function () {
+      this.currentTime = data;
+      $("video").off("canplay");
+    })
+  })
 }
