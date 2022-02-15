@@ -82,6 +82,6 @@ function setStartTime(videoId, username) {
     $("video").on("canplay", function () {
       this.currentTime = data;
       $("video").off("canplay");
-    })
-  })
+    });
+  });
 }

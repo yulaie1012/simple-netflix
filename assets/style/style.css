@@ -184,8 +184,7 @@ button i {
 }
 
 .entities,
-.videos
-{
+.videos {
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
@@ -248,20 +247,20 @@ button i {
   width: 100%;
 }
 
-.video-controls {
+.video-control {
   position: absolute;
   width: 100%;
   z-index: 1;
   display: flex;
   align-items: center;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-.video-controls h1 {
+.video-control h1 {
   color: #ffffff;
 }
 
-.video-controls button {
+.video-control button {
   font-size: 50px;
   margin: 50px;
   padding: 0;
