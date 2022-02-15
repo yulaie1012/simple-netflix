@@ -31,11 +31,11 @@ function initializeVideo(videoId, username) {
 }
 
 function updateProgressTimer(videoId, username) {
-  addProgress();
+  addProgress(videoId, username);
 }
 
-function addProgress() {
-  $.post("ajax/addProgress.php", function (data) {
+function addProgress(videoId, username) {
+  $.post("ajax/addProgress.php", { videoId, username }, function (data) {
     alert(data);
-  })
+  });
 }
