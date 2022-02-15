@@ -38,6 +38,14 @@ class Video {
     return $this->entity->getThumbnail();
   }
 
+  public function getEntityId() {
+    return $this->sqlData["entityId"];
+  }
+
+  public function getSeason() {
+    return $this->sqlData["season"];
+  }
+
   public function getEpisode() {
     return $this->sqlData["episode"];
   }
