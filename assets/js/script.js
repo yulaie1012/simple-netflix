@@ -39,13 +39,11 @@ function updateProgressTimer(videoId, username) {
     .on("playing", function (event) {
       window.clearInterval(timer);
       timer = window.setInterval(function () {
-        // TODO: update progress
         updateProgress(videoId, username, event.target.currentTime);
       }, 3000);
     })
     .on("ended", function () {
-      // TODO: set finished
-      console.log(2);
+      setFinished(videoId, username);
       window.clearInterval(timer);
     });
 }
@@ -60,6 +58,14 @@ function addProgress(videoId, username) {
 
 function updateProgress(videoId, username, progress) {
   $.post("ajax/updateProgress.php", { videoId, username, progress }, function (data) {
+    if (data !== null && data !== "") {
+      alert(data);
+    }
+  });
+}
+
+function setFinished(videoId, username) {
+  $.post("ajax/setFinished.php", { videoId, username }, function (data) {
     if (data !== null && data !== "") {
       alert(data);
     }
