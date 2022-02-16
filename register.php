@@ -9,11 +9,11 @@ $account = new Account($con);
 if (isset($_POST["submitButton"])) {
   $firstName = FormSanitizer::sanitizeFormName($_POST["firstName"]);
   $lastName = FormSanitizer::sanitizeFormName($_POST["lastName"]);
-  $username = FormSanitizer::sanitizeFormName($_POST["username"]);
-  $email = FormSanitizer::sanitizeFormName($_POST["email"]);
-  $email2 = FormSanitizer::sanitizeFormName($_POST["email2"]);
-  $password = FormSanitizer::sanitizeFormName($_POST["password"]);
-  $password2 = FormSanitizer::sanitizeFormName($_POST["password2"]);
+  $username = FormSanitizer::sanitizeFormUsername($_POST["username"]);
+  $email = FormSanitizer::sanitizeFormEmail($_POST["email"]);
+  $email2 = FormSanitizer::sanitizeFormEmail($_POST["email2"]);
+  $password = FormSanitizer::sanitizeFormPassword($_POST["password"]);
+  $password2 = FormSanitizer::sanitizeFormPassword($_POST["password2"]);
 
   $success = $account->register($firstName, $lastName, $username, $email, $email2, $password, $password2);
 
