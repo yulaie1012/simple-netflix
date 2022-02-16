@@ -15,7 +15,11 @@ if (isset($_POST["saveDetailsButton"])) {
   $email = FormSanitizer::sanitizeFormEmail($_POST["email"]);
 
   $account = new Account($con);
-  $account->updateDetails($firstName, $lastName, $email, $userLoggedIn);
+  if ($account->updateDetails($firstName, $lastName, $email, $userLoggedIn)) {
+    // Success
+  } else {
+    // Failure
+  }
 }
 ?>
 <div class="settings-container column">
