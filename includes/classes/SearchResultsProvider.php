@@ -8,7 +8,7 @@ class SearchResultsProvider {
   }
 
   public function getResults($keyword) {
-    echo $keyword;
+    $entities = EntityProvider::getSearchEntities($this->con, $keyword);
   }
 }
 ?>
