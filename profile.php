@@ -1,15 +1,20 @@
 <?php
 require_once("includes/header.php");
-?>
 
+$user = new User($con, $userLoggedIn);
+
+$firstName = isset($_POST["firstName"]) ? $_POST["firstName"] : $user->getFirstName();
+$lastName = isset($_POST["lastName"]) ? $_POST["lastName"] : $user->getLastName();
+$email = isset($_POST["email"]) ? $_POST["email"] : $user->getEmail();
+?>
 <div class="settings-container column">
   <div class="form-section">
     <form method="POST">
       <h2>User details</h2>
 
-      <input type="text" name="firstName" placeholder="first Name" />
-      <input type="text" name="lastName" placeholder="last Name" />
-      <input type="text" name="email" placeholder="email" />
+      <input type="text" name="firstName" placeholder="first Name" value="<?php echo $firstName; ?>" />
+      <input type="text" name="lastName" placeholder="last Name" value="<?php echo $lastName; ?>" />
+      <input type="text" name="email" placeholder="email" value="<?php echo $email; ?>" />
 
       <input type="submit" name="saveDetailsButton" value="Save" />
     </form>
