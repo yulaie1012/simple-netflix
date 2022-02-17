@@ -149,5 +149,11 @@ class Account {
       return "<span class='error-message'>$error</span>";
     }
   }
+
+  public function getFirstError() {
+    if (!empty($this->errorArray)) {
+      return $this->errorArray[0];
+    }
+  }
 }
 ?>
