@@ -21,6 +21,7 @@ a h3:hover {
 
 a {
   text-decoration: none;
+  color: #0654ba;
 }
 
 .wrapper {
@@ -422,4 +423,10 @@ button i {
 
 .alert-success {
     color: #2ecc71;
+}
+
+.form-section h3 {
+  color: #ffffff;
+  font-size: 20px;
+  padding: 0;
 }
