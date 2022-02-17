@@ -11,6 +11,7 @@ $lastName = isset($_POST["lastName"]) ? $_POST["lastName"] : $user->getLastName(
 $email = isset($_POST["email"]) ? $_POST["email"] : $user->getEmail();
 
 $detailsMessage = "";
+$passwordMessage = "";
 
 if (isset($_POST["saveDetailsButton"])) {
   $firstName = FormSanitizer::sanitizeFormName($_POST["firstName"]);
@@ -29,6 +30,25 @@ if (isset($_POST["saveDetailsButton"])) {
                        </div>";
   }
 }
+
+if (isset($_POST["savePasswordButton"])) {
+  $oldPassword = FormSanitizer::sanitizeFormName($_POST["oldPassword"]);
+  $newPassword = FormSanitizer::sanitizeFormName($_POST["newPassword"]);
+  $newPassword2 = FormSanitizer::sanitizeFormEmail($_POST["newPassword2"]);
+
+  $account = new Account($con);
+  if ($account->updatePassword($oldPassword, $newPassword, $newPassword2, $userLoggedIn)) {
+    $passwordMessage = "<div class='alert-success'>
+                         Details updated successfully!
+                       </div>";
+  } else {
+    $errorMessage = $account->getFirstError();
+    $passwordMessage = "<div class='alert-error'>
+                         $errorMessage
+                       </div>";
+  }
+}
+
 ?>
 <div class="settings-container column">
   <div class="form-section">
@@ -56,6 +76,10 @@ if (isset($_POST["saveDetailsButton"])) {
       <input type="password" name="newPassword2" placeholder="Confirm new password" />
 
       <input type="submit" name="savePasswordButton" value="Save" />
+
+      <div class="message">
+        <?php echo $passwordMessage; ?>
+      </div>
     </form>
   </div>
 </div>
