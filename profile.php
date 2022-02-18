@@ -13,6 +13,7 @@ $email = isset($_POST["email"]) ? $_POST["email"] : $user->getEmail();
 
 $detailsMessage = "";
 $passwordMessage = "";
+$subscriptionMessage = "";
 
 if (isset($_POST["saveDetailsButton"])) {
   $firstName = FormSanitizer::sanitizeFormName($_POST["firstName"]);
@@ -68,7 +69,9 @@ if (isset($_GET['success']) && $_GET['success'] == 'true') {
     die($ex);
   }
 } else if (isset($_GET['success']) && $_GET['success'] == 'false') {
-  echo "user canceled agreement";
+  $subscriptionMessage = "<div class='alert-error'>
+                            User cancelled or something went wrong!
+                          </div>";
 }
 ?>
 <div class="settings-container column">
@@ -106,6 +109,9 @@ if (isset($_GET['success']) && $_GET['success'] == 'true') {
 
   <div class="form-section">
     <h2>Subscription</h2>
+      <div class="message">
+        <?php echo $subscriptionMessage; ?>
+      </div>
     <?php
     if ($user->getIsSubscribed()) {
       echo "<h3>You are subscribed! Go to PayPal to cancel.</h3>";
