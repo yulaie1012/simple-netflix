@@ -19,7 +19,7 @@ $upNextVideo = VideoProvider::getUpNext($con, $video);
 ?>
 <div class="watch-container">
   <div class="video-control watch-nav">
-    <button>
+    <button onclick="goBack();">
       <i class="fa-solid fa-arrow-left"></i>
     </button>
     <h1><?php echo $video->getTitle(); ?></h1>

@@ -16,6 +16,10 @@ function finishTrailer() {
   $(".preview-image").toggle();
 }
 
+function goBack() {
+  window.history.back();
+}
+
 function hideTimer() {
   let timeout = null;
 
