@@ -28,11 +28,11 @@ class SearchResultsProvider {
       $entitiesHtml .= $previewProvider->createEntityPreviewSquare($entity);
     }
 
-    return "<div class='category'>
+    return "
               <div class='entities'>
                 $entitiesHtml
               </div>
-            </div>";
+            ";
   }
 }
 ?>

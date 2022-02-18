@@ -116,6 +116,7 @@ a {
 }
 
 .preview-container {
+  margin: 0 auto;
   position: relative;
   display: flex;
 }
@@ -247,8 +248,10 @@ button i {
   overflow-y: auto;
 }
 
-.preview-categories.no-scroll .category .entities {
-  white-space: normal;
+.preview-categories.no-scroll .entities {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .watch-container video {
