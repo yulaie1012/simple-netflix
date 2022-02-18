@@ -4,6 +4,7 @@ require_once("includes/paypalConfig.php");
 require_once("includes/classes/Account.php");
 require_once("includes/classes/FormSanitizer.php");
 require_once("includes/classes/Constants.php");
+require_once("includes/classes/BillingDetails.php");
 
 $user = new User($con, $userLoggedIn);
 
@@ -59,6 +60,7 @@ if (isset($_GET['success']) && $_GET['success'] == 'true') {
     // Execute agreement
     $agreement->execute($token, $apiContext);
 
+    $result = BillingDetails::insertDetails($con, $agreement, $token, $userLoggedIn);
     // Update user's account status
 
   } catch (PayPal\Exception\PayPalConnectionException $ex) {
