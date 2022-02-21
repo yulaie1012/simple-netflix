@@ -12,7 +12,7 @@ require_once("includes/classes/User.php");
 require_once("includes/classes/ErrorMessage.php");
 
 if (!isset($_SESSION["userLoggedIn"])) {
-  header("Location: register.php");
+  header("Location: login.php");
 }
 
 $userLoggedIn = $_SESSION["userLoggedIn"];
