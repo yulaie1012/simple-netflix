@@ -58,7 +58,7 @@ class PreviewProvider {
 
     return "<div class='preview-container'>
               <img src='$thumbnail' class='preview-image' hidden />
-              <video autoplay muted class='preview-video' onended='finishTrailer();'>
+              <video autoplay class='preview-video' onended='finishTrailer();'>
                 <source src='$trailer' type='video/mp4' />
               </video>
               <div class='preview-overlay'>
@@ -70,7 +70,7 @@ class PreviewProvider {
                       <i class='fa-solid fa-play'></i> $playButtonText
                     </button>
                     <button onclick='toggleVolume(this);'>
-                      <i class='fa-solid fa-volume-xmark'></i>
+                      <i class='fa-solid fa-volume-high'></i>
                     </button>
                   </div>
                 </div>
